@@ -168,8 +168,8 @@ async def handle_call_tool(
         ]
 
 
-async def main():
-    """Main entry point for the MCP server"""
+async def async_main():
+    """Async main entry point for the MCP server"""
     # Run the server using stdin/stdout streams
     async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
         await server.run(
@@ -186,5 +186,10 @@ async def main():
         )
 
 
+def main():
+    """Synchronous entry point that runs the async main function"""
+    asyncio.run(async_main())
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
