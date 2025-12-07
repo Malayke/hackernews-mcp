@@ -16,6 +16,24 @@ A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that fe
 
 ## Installation
 
+### Using uvx from GitHub (Recommended)
+
+```bash
+uvx --from git+https://github.com/Malayke/hackernews-mcp.git hackernews-mcp
+```
+
+### Using uv pip
+
+```bash
+uv pip install git+https://github.com/Malayke/hackernews-mcp.git
+```
+
+### Using pip
+
+```bash
+pip install git+https://github.com/Malayke/hackernews-mcp.git
+```
+
 ## Usage
 
 ### As an MCP Server
@@ -25,12 +43,12 @@ Add to your MCP settings configuration (e.g., in Claude Desktop or other MCP cli
 ```json
 {
   "mcpServers": {
-    "hackernews-reader": {
+    "hackernews-mcp": {
       "command": "uvx",
       "args": [
         "--from",
         "git+https://github.com/Malayke/hackernews-mcp.git",
-        "hackernews-reader"
+        "hackernews-mcp"
       ],
       "env": {
         "FIRECRAWL_API_KEY": "your_api_key_here"
@@ -45,32 +63,14 @@ Or if you've installed it with pip/uv pip:
 ```json
 {
   "mcpServers": {
-    "hackernews-reader": {
-      "command": "hackernews-reader",
+    "hackernews-mcp": {
+      "command": "hackernews-mcp",
       "env": {
         "FIRECRAWL_API_KEY": "your_api_key_here"
       }
     }
   }
 }
-```
-
-### Using uvx from GitHub (Recommended)
-
-```bash
-uvx --from git+https://github.com/Malayke/hackernews-mcp.git hackernews-reader
-```
-
-### Using uv pip
-
-```bash
-uv pip install git+https://github.com/Malayke/hackernews-mcp.git
-```
-
-### Using pip
-
-```bash
-pip install git+https://github.com/Malayke/hackernews-mcp.git
 ```
 
 
@@ -169,7 +169,7 @@ For local development with live changes:
 ```json
 {
   "mcpServers": {
-    "hackernews-reader": {
+    "hackernews-mcp": {
       "command": "uv",
       "args": [
         "run",
