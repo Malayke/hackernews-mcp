@@ -1,8 +1,8 @@
 import sys
 import argparse
 from typing import Dict, Any, Optional
-from parse_hn_comments import parse_hn_comments
-from firecrawl import scrape_url, get_markdown, FirecrawlError
+from hn_parser import parse_hn_comments
+from firecrawl_client import scrape_url, get_markdown, FirecrawlError
 
 
 def get_hn_content(hn_url: str, api_key: Optional[str] = None) -> Dict[str, Any]:
@@ -109,7 +109,7 @@ def print_result(result: Dict[str, Any], compact: bool = False):
             print()
         
         # Print comments
-        from parse_hn_comments import print_comment_llm
+        from hn_parser import print_comment_llm
         for i, comment in enumerate(hn_data.get('comments', []), 1):
             print(f"COMMENT #{i}")
             print_comment_llm(comment)
@@ -140,7 +140,7 @@ def print_result(result: Dict[str, Any], compact: bool = False):
             print()
         
         # Print comments
-        from parse_hn_comments import print_comment
+        from hn_parser import print_comment
         print("COMMENTS")
         print("=" * 80)
         for i, comment in enumerate(hn_data.get('comments', []), 1):

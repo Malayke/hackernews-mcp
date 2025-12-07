@@ -5,18 +5,14 @@ Provides tools to fetch HN comments and article content
 """
 
 import asyncio
-import os
-import sys
-from typing import Any, Optional
 from mcp.server.models import InitializationOptions
 import mcp.types as types
 from mcp.server import NotificationOptions, Server
 import mcp.server.stdio
 
 # Import existing modules
-from parse_hn_comments import parse_hn_comments, print_comment_llm
-from firecrawl import scrape_url, get_markdown, FirecrawlError
-from io import StringIO
+from hn_parser import parse_hn_comments
+from firecrawl_client import scrape_url, get_markdown, FirecrawlError
 
 # Initialize server
 server = Server("hackernews-mcp")

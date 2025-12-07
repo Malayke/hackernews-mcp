@@ -39,4 +39,4 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ["server", "parse_hn_comments", "firecrawl"]
+py-modules = ["server", "hn_parser", "firecrawl_client", "hn_cli", "hn_frontpage"]
