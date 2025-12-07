@@ -19,7 +19,7 @@ from firecrawl import scrape_url, get_markdown, FirecrawlError
 from io import StringIO
 
 # Initialize server
-server = Server("hackernews-reader")
+server = Server("hackernews-mcp")
 
 
 def format_comment_llm(comment: dict, indent: int = 0) -> str:
@@ -180,7 +180,7 @@ async def main():
             read_stream,
             write_stream,
             InitializationOptions(
-                server_name="hackernews-reader",
+                server_name="hackernews-mcp",
                 server_version="0.1.0",
                 capabilities=server.get_capabilities(
                     notification_options=NotificationOptions(),

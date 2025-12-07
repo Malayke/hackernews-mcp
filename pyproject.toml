@@ -32,7 +32,7 @@ Repository = "https://github.com/Malayke/hackernews-mcp"
 Issues = "https://github.com/Malayke/hackernews-mcp/issues"
 
 [project.scripts]
-hackernews-reader = "server:main"
+hackernews-mcp = "server:main"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
