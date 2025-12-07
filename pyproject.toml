@@ -1,0 +1,42 @@
+[project]
+name = "hackernews-mcp"
+version = "0.1.0"
+description = "Hacker News MCP Server - Fetch HN discussions and article content"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Malayke", email = "malayke@example.com"}
+]
+keywords = ["mcp", "hackernews", "llm", "ai", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "firecrawl-py>=4.10.0",
+    "mcp>=1.23.1",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/Malayke/hackernews-mcp"
+Repository = "https://github.com/Malayke/hackernews-mcp"
+Issues = "https://github.com/Malayke/hackernews-mcp/issues"
+
+[project.scripts]
+hackernews-reader = "server:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["server", "parse_hn_comments", "firecrawl"]
